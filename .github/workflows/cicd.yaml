@@ -49,7 +49,7 @@ jobs:
       - name: Build and publish
         run: |
           dotnet restore
-          dotnet publish -c Release -o site --self-contained true -r linux-x64
+          dotnet publish CryptAPI.csproj -c Release -o site --self-contained -r linux-x64
       
       - name: Create deployment package
         run: cd site && zip -r ../site.zip * && cd ..
